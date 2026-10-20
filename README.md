@@ -1,11 +1,8 @@
-Resolución del ejercicio N°4 de la unidad 2 de programación 2.
-Este programa gestiona el proceso de asignación y control de recursos bibliotecarios.
-Permite verificar la disponibilidad de los ejemplares solicitados para emitir comprobantes de autorización o rechazar la operación según corresponda.
+Este programa está diseñado para modelar y gestionar el sistema de préstamos y el control de inventario de una **biblioteca** utilizando programación orientada a objetos (por ejemplo, en Java).
 
-Las clases utilizadas para llevar a cabo este proceso son:
+A continuación se detalla exactamente lo que hace cada parte del programa:
 
-Libro: Almacena la información de los ejemplares y su estado actual de disponibilidad.
-Socio: Representa a los usuarios habilitados para solicitar los materiales.
-ComprobantePrestamo: Representa el documento generado cuando una solicitud es aprobada con éxito.
-Biblioteca: Coordina la lógica de validación y procesa las solicitudes de préstamo.
-Main: Controla la ejecución general, instanciando los objetos necesarios y simulando los diferentes escenarios de préstamo.
+* **Define las clases `Libro` y `Socio`:** La clase `Libro` modela una obra literaria conteniendo sus atributos principales: el título (`titulo`), el autor (`autor`) y un indicador booleano de disponibilidad (`disponibilidad`). Por su parte, la clase `Socio` encapsula la información de los usuarios registrados mediante su nombre (`nombre`) y su número de identificación (`numeroSocio`).
+* **Introduce la clase `ComprobantePrestamo`:** Modela el registro o recibo formal que se genera al concretar una transacción de préstamo de manera exitosa, asociando los datos del libro entregado, el socio receptor y el estado de la operación.
+* **Diseña la clase `Biblioteca` y su lógica de préstamo:** Contiene un método fundamental llamado `prestarLibro(Libro libro, Socio socio)` que evalúa si el libro se encuentra disponible. Si la condición es verdadera, modifica el estado del libro a no disponible y retorna un objeto de tipo `ComprobantePrestamo`; de lo contrario (si el libro ya fue prestado), la operación falla y retorna `null`.
+* **Ejecuta la prueba (`main`):** Instancia objetos de tipo `Libro`, `Socio` y `Biblioteca`, y simula el flujo de mensajes ejecutando un préstamo exitoso (primer intento) y un préstamo fallido (intentando prestar un libro que ya se encuentra ocupado), mostrando los resultados y notificaciones correspondientes por consola.
